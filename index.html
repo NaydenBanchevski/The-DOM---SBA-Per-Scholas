@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">
+          <img class="logo-img" src="./assets/logo.png" alt="Bank" />
+          <h1 class="logo-text">YourBanK</h1>
+        </div>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <button class="sign-btn">Sign Up</button>
+          <button class="log-btn">Login</button>
+        </div>
+      </nav>
+    </header>
+    <main class="main-container">
+      <div class="hero-container">
+        <div class="hero-title-container">
+          <h1 class="hero-title">Sign Up</h1>
+          <p class="hero-paragraph">
+            Join our community today! Create an account to unlock exclusive
+            features and personalized experiences.
+          </p>
+        </div>
+        <div class="form-container">
+          <form action="submit" id="registration">
+            <div class="user-container">
+              <input
+                type="text"
+                id="userName"
+                name="username"
+                placeholder="Enter Username"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your Email"
+                required
+              />
+            </div>
+            <div class="pass-container">
+              <input
+                type="pass"
+                id="password"
+                name="password"
+                placeholder="Enter your Password"
+                required
+              />
+              <input
+                type="password"
+                id="regCheck"
+                name="passwordCheck"
+                placeholder="Confirm your Password"
+                required
+              />
+            </div>
+            <div class="buttons-container">
+              <button type="submit" class="submit-btn">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
