@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+}
+
+:root {
+  --paragraph-color: #bfbfbf;
+  --border-color: #65656734;
+  --font-color: #656567;
+  --font-dark-color: #1e1e1e;
+  --light-color: #caff33;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1a1a;
+  width: 100%;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid var(--border-color);
+  align-items: center;
+  padding: 10px 40px;
+  border-radius: 50px;
+  background-color: #1c1c1c;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.logo-text {
+  color: var(--font-color);
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  list-style: none;
+}
+
+.menu li {
+  color: var(--font-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sign-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--font-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+.log-btn {
+  background-color: var(--light-color);
+  color: var(--font-dark-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+}
