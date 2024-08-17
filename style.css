@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
+input:-webkit-autofill {
   border: 1px solid #434346;
   -webkit-text-fill-color: var(--light-color);
+  font-size: 20px;
   -webkit-box-shadow: 0 0 0px 1000px #1b1b1c inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+::selection,
+input::selection {
+  background-color: var(--light-color);
+  color: var(--font-dark-color);
 }
 
 * {
@@ -14,6 +19,7 @@ input:-webkit-autofill:focus {
   margin: 0;
   box-sizing: border-box;
   font-family: "Lexend", sans-serif;
+  outline: none;
 }
 
 :root {
@@ -244,7 +250,6 @@ body {
   background-color: #1a1a1a;
   font-weight: 100;
   border-radius: 50px;
-  outline: none;
   color: var(--light-color);
 }
 
@@ -259,7 +264,6 @@ body {
   width: 500px;
   height: 65px;
   border-radius: 50px;
-  outline: none;
 }
 #logInHero {
   background-color: #262626;
@@ -303,6 +307,13 @@ body {
   width: 55px;
   height: 55px;
   fill: var(--light-color);
+  border-radius: 50%;
+  transition: opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.footer-icon:hover {
+  opacity: 1;
 }
 
 .footer-paragraph {
@@ -384,8 +395,13 @@ body {
   width: 100px;
   height: 100px;
   cursor: pointer;
+  transition: scale 0.2s ease-in, opacity 0.2s ease-in;
+  opacity: 0.7;
 }
-
+.media-icon:hover {
+  scale: 1.05;
+  opacity: 2;
+}
 .circle {
   height: 24px;
   width: 24px;
@@ -396,11 +412,6 @@ body {
   left: 0;
   pointer-events: none;
   z-index: 100;
-}
-
-::selection {
-  background-color: var(--light-color);
-  color: var(--font-dark-color);
 }
 
 .hide {
@@ -440,11 +451,9 @@ body {
   width: 500px;
   height: 65px;
   border-radius: 50px;
-  outline: none;
 }
 
 #log-signUp {
-  margin-top: 20px;
   width: 500px;
   height: 65px;
   border-radius: 50px;
