@@ -25,15 +25,15 @@
 
     <main class="main-container">
       <div class="hero-container">
-        <div class="hero-title-container">
-          <h1 class="hero-title">Sign Up</h1>
-          <p class="hero-paragraph">
-            Join our community today! Create an account to unlock exclusive
-            features and personalized experiences.
-          </p>
-        </div>
         <div class="form-container">
-          <form action="submit" id="registration">
+          <div class="hero-title-container">
+            <h1 class="hero-title">Sign Up</h1>
+            <p class="hero-paragraph">
+              Join our community today! Create an account to unlock exclusive
+              features and personalized experiences.
+            </p>
+          </div>
+          <form id="registration">
             <div class="user-container">
               <input
                 type="text"
@@ -81,27 +81,50 @@
                 <button type="button" id="logInHero">Login</button>
               </a>
             </div>
-            <div class="form-media-container">
-              <div class="form-media-title">
-                <div class="line"></div>
-                <p class="media-paragraph">Or Continue with</p>
-                <div class="line"></div>
-              </div>
-              <div class="form-media-icons">
-                <img
-                  class="media-icon"
-                  src="./assets/google.png"
-                  alt="Google"
-                />
-                <img
-                  class="media-icon"
-                  src="./assets/facebook-form.png"
-                  alt="Facebook"
-                />
-                <img class="media-icon" src="./assets/apple.png" alt="Apple" />
-              </div>
-            </div>
           </form>
+        </div>
+        <div id="login-container" class="hide">
+          <div class="hero-title-container">
+            <h1 class="hero-title">Login</h1>
+            <p class="hero-paragraph">
+              "Welcome back! Log in to access your personalized features and
+              continue your journey with our community."
+            </p>
+          </div>
+          <form id="login">
+            <input
+              type="text"
+              placeholder="Username"
+              name="user-login"
+              class="login-input"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              class="login-input"
+              required
+            />
+            <input id="log-btn" type="submit" value="Login" />
+            <button id="log-signUp">Sign Up</button>
+          </form>
+        </div>
+        <div class="form-media-container">
+          <div class="form-media-title">
+            <div class="line"></div>
+            <p class="media-paragraph">Or Continue with</p>
+            <div class="line"></div>
+          </div>
+          <div class="form-media-icons">
+            <img class="media-icon" src="./assets/google.png" alt="Google" />
+            <img
+              class="media-icon"
+              src="./assets/facebook-form.png"
+              alt="Facebook"
+            />
+            <img class="media-icon" src="./assets/apple.png" alt="Apple" />
+          </div>
         </div>
       </div>
     </main>

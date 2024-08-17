@@ -1,9 +1,20 @@
 let navUl = document.getElementById("nav-ul");
+let signBtn = document.querySelector(".sign-btn");
+let logBtn = document.querySelector(".log-btn");
+let logSignUp = document.querySelector("#log-signUp");
 let registration = document.querySelector("#registration");
 let username = registration["username"];
 let password = registration["password"];
 let email = registration["email"];
 let passwordCheck = registration["passwordCheck"];
+let logInBtnHero = document.querySelector("#logInHero");
+let title = document.querySelector(".hero-title");
+let paragraph = document.querySelector(".hero-paragraph");
+let login = document.querySelector("#login");
+let passwordLogin = login["password"];
+let userLogin = login["username"];
+let signUpLogBtn = document.querySelector("#log-signUp");
+let logStatus = false;
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -42,7 +53,7 @@ username.addEventListener("input", userNameValidation);
 // Email Validation
 function emailValidation() {
   if (
-    users.some((user) => user.email.toLowerCase() === email.value.toLower())
+    users.some((user) => user.email.toLowerCase() === email.value.toLowerCase())
   ) {
     email.setCustomValidity("Email already exists");
     return false;
@@ -89,6 +100,7 @@ passwordCheck.addEventListener("input", passwordValidation);
 
 registration.addEventListener("submit", function (event) {
   if (!userNameValidation() || !emailValidation() || !passwordValidation()) {
+    console.log("Validation failed, form not submitted.");
     event.preventDefault();
   } else {
     users.push({
@@ -96,10 +108,56 @@ registration.addEventListener("submit", function (event) {
       email: email.value,
       password: password.value,
     });
-
+    logStatus = true;
     localStorage.setItem("users", JSON.stringify(users));
+    // add functionality to redirect users once registered
   }
 });
+
+// Handling login events
+
+// function loginCheck() {
+//   let user = users.find(
+//     (user) =>
+//       user.username === logUser.value && user.password === logPassword.value
+//   );
+
+//   if (!user) {
+//     logUser.setCustomValidity("Invalid username or password");
+//     return false;
+//   } else {
+//     logUser.setCustomValidity("");
+//     return true;
+//   }
+// }
+
+// logUser.addEventListener("input", loginCheck);
+// logPassword.addEventListener("input", loginCheck);
+// login.addEventListener("submit", function (event) {
+//   if (!loginCheck()) {
+//     event.preventDefault();
+//   } else {
+//     logStatus = true;
+//   }
+// });
+
+//Nav Buttons  functionality
+function handleClick(e) {
+  e.preventDefault();
+  document.querySelector("#login-container").classList.toggle("hide");
+  document.querySelector(".form-container").classList.toggle("hide");
+  signBtn.classList.toggle("btn-inactive");
+  logBtn.classList.toggle("btn-active");
+}
+function handleButton(btn) {
+  btn.addEventListener("click", handleClick);
+}
+
+handleButton(signBtn);
+handleButton(logBtn);
+handleButton(logInBtnHero);
+handleButton(logSignUp);
+handleButton(signUpLogBtn);
 
 // navigation links
 const navLinks = [
@@ -111,6 +169,7 @@ const navLinks = [
 navLinks.forEach((link) => {
   const navLi = document.createElement("li");
   const navLink = document.createElement("a");
+  navLink.classList.add("nav-links");
   navLink.textContent = link.label;
   navLink.href = link.href;
   navLi.appendChild(navLink);
@@ -118,6 +177,14 @@ navLinks.forEach((link) => {
 });
 
 navUl.classList.add("menu");
+
+document.querySelectorAll(".nav-links").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    if (logStatus === false) {
+      e.preventDefault();
+    }
+  });
+});
 
 // custom cursor
 function createCircles() {
@@ -167,3 +234,5 @@ function animateCircles() {
 }
 
 animateCircles();
+
+//perScholas2024!
