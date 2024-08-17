@@ -8,7 +8,7 @@ let passwordCheck = registration["passwordCheck"];
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
 // username validation
-function validUserName() {
+function userNameValidation() {
   let uniqueChar = new Set(username.value.toLowerCase());
   let userRegEx = /^[a-zA-Z0-9]+$/;
 
@@ -37,7 +37,70 @@ function validUserName() {
     return true;
   }
 }
-username.addEventListener("input", validUserName);
+username.addEventListener("input", userNameValidation);
+
+// Email Validation
+function emailValidation() {
+  if (
+    users.some((user) => user.email.toLowerCase() === email.value.toLower())
+  ) {
+    email.setCustomValidity("Email already exists");
+    return false;
+  } else {
+    email.setCustomValidity("");
+    return true;
+  }
+}
+email.addEventListener("input", emailValidation);
+
+// Password Validation
+
+function passwordValidation() {
+  let passwordRegEx =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/;
+  if (!passwordRegEx.test(password.value)) {
+    password.setCustomValidity(
+      "The password must contain at least 12 characters, including one uppercase, one lowercase, one number, and one special character. "
+    );
+  } else if (password.value.toLowerCase().includes("password")) {
+    password.setCustomValidity(
+      "The password must not contain the word 'password'"
+    );
+    return false;
+  } else if (
+    password.value.toLowerCase().includes(username.value.toLowerCase())
+  ) {
+    password.setCustomValidity("The password must not contain the username");
+    return false;
+  } else if (password.value !== passwordCheck.value) {
+    passwordCheck.setCustomValidity("Passwords do not match");
+    return false;
+  } else {
+    passwordCheck.setCustomValidity("");
+    password.setCustomValidity("");
+    return true;
+  }
+}
+
+password.addEventListener("input", passwordValidation);
+passwordCheck.addEventListener("input", passwordValidation);
+
+// Handling registration events
+
+registration.addEventListener("submit", function (event) {
+  if (!userNameValidation() || !emailValidation() || !passwordValidation()) {
+    event.preventDefault();
+  } else {
+    users.push({
+      username: username.value,
+      email: email.value,
+      password: password.value,
+    });
+
+    localStorage.setItem("users", JSON.stringify(users));
+  }
+});
+
 // navigation links
 const navLinks = [
   { label: "Home", href: "/" },

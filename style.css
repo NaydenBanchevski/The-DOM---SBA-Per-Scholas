@@ -210,7 +210,7 @@ body {
   border-radius: 50px;
   margin: 0 10px 0 10px;
   padding: 25px;
-  outline: none;
+  outline: var(--light-color);
   color: var(--light-color);
 }
 
