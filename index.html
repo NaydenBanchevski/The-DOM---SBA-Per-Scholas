@@ -42,6 +42,7 @@
                 placeholder="Enter Username"
                 required
               />
+              <span class="error-message"></span>
               <input
                 type="email"
                 id="email"
@@ -49,6 +50,7 @@
                 placeholder="Enter your Email"
                 required
               />
+              <span class="error-message"></span>
             </div>
             <div class="pass-container">
               <input
@@ -65,6 +67,7 @@
                 placeholder="Confirm your Password"
                 required
               />
+              <span class="error-message"></span>
             </div>
             <div class="buttons-container">
               <input
@@ -73,6 +76,7 @@
                 value="Sign Up"
                 class="submit-btn"
               />
+              <span class="error-message"></span>
               <a href="/">
                 <button type="button" id="logInHero">Login</button>
               </a>
@@ -101,29 +105,37 @@
         </div>
       </div>
     </main>
-    <footer class="footer">
-      <div class="social-icons">
-        <a href="#"
-          ><img class="footer-icon" src="./assets/facebook.png" alt="Facebook"
-        /></a>
-        <a href="#"
-          ><img class="footer-icon" src="./assets/twitter.png" alt="Twitter"
-        /></a>
+    <footer class="footer-container">
+      <div class="footer">
+        <div class="social-icons">
+          <a href="#"
+            ><img
+              class="footer-icon"
+              src="./assets/facebook.png"
+              alt="Facebook"
+          /></a>
+          <a href="#"
+            ><img class="footer-icon" src="./assets/twitter.png" alt="Twitter"
+          /></a>
 
-        <a href="#"
-          ><img class="footer-icon" src="./assets/linkedin.png" alt="LinkedIn"
-        /></a>
+          <a href="#"
+            ><img
+              class="footer-icon"
+              src="./assets/linkedin.png"
+              alt="LinkedIn"
+          /></a>
+        </div>
+        <p class="footer-paragraph">
+          &copy; 2024 YourBanK. All rights reserved. Developer :
+          <a href="https://github.com/NaydenBanchevski " target="_blank">
+            Nayden Banchevski
+          </a>
+          | Designer:
+          <a href="https://www.figma.com/@praha" target="_blank">
+            Praha Produce UI
+          </a>
+        </p>
       </div>
-      <p class="footer-paragraph">
-        &copy; 2024 YourBanK. All rights reserved. Developer :
-        <a href="https://github.com/NaydenBanchevski " target="_blank">
-          Nayden Banchevski
-        </a>
-        | Designer:
-        <a href="https://www.figma.com/@praha" target="_blank">
-          Praha Produce UI
-        </a>
-      </p>
     </footer>
     <script src="app.js"></script>
   </body>

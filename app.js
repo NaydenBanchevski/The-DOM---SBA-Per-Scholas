@@ -1,5 +1,44 @@
 let navUl = document.getElementById("nav-ul");
+let registration = document.querySelector("#registration");
+let username = registration["username"];
+let password = registration["password"];
+let email = registration["email"];
+let passwordCheck = registration["passwordCheck"];
 
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+// username validation
+function validUserName() {
+  let uniqueChar = new Set(username.value.toLowerCase());
+  let userRegEx = /^[a-zA-Z0-9]+$/;
+
+  if (uniqueChar.size < 2) {
+    username.setCustomValidity(
+      "Username must contain at least two unique characters"
+    );
+    return false;
+  } else if (username.value.length < 4) {
+    username.setCustomValidity("Username must be at least 4 characters long");
+    return false;
+  } else if (!userRegEx.test(username.value)) {
+    username.setCustomValidity(
+      "Username must not contain any spaces or special characters"
+    );
+    return false;
+  } else if (
+    users.some(
+      (user) => user.username.toLowerCase() === username.value.toLowerCase()
+    )
+  ) {
+    username.setCustomValidity("Username already exists");
+    return false;
+  } else {
+    username.setCustomValidity("");
+    return true;
+  }
+}
+username.addEventListener("input", validUserName);
+// navigation links
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -17,6 +56,7 @@ navLinks.forEach((link) => {
 
 navUl.classList.add("menu");
 
+// custom cursor
 function createCircles() {
   const container = document.createElement("div");
   for (let i = 0; i < 50; i++) {
