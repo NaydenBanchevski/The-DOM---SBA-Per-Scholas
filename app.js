@@ -21,7 +21,6 @@ let signUpLogBtn = document.querySelector("#log-signUp");
 let logStatus = false;
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
-
 // front end functionality
 
 //Nav Buttons  functionality
@@ -218,3 +217,25 @@ registration.addEventListener("submit", function (event) {
 });
 
 //perScholas2024!
+// login functions
+function logCheck() {
+  let user = users.find(
+    (user) =>
+      user.username === userLogin.value && user.password === passwordLogin.value
+  );
+  if (!user) {
+    userLogin.setCustomValidity("Invalid username or password");
+    return false;
+  } else {
+    userLogin.setCustomValidity("");
+    return true;
+  }
+}
+userLogin.addEventListener("input", logCheck);
+passwordLogin.addEventListener("input", logCheck);
+login.addEventListener("submit", (e) => {
+  if (!logCheck()) {
+    e.preventDefault();
+  }
+  window.location.href = "https://google.com";
+});
