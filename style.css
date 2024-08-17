@@ -364,3 +364,20 @@ body {
   height: 100px;
   cursor: pointer;
 }
+
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: var(--light-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+::selection {
+  background-color: var(--light-color);
+  color: var(--font-dark-color);
+}
