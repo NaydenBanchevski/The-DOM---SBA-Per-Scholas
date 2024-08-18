@@ -26,10 +26,11 @@ let users = JSON.parse(localStorage.getItem("users")) || [];
 //Nav Buttons  functionality
 function handleClick(e) {
   e.preventDefault();
+
   document.querySelector("#login-container").classList.toggle("hide");
   document.querySelector(".form-container").classList.toggle("hide");
-  signBtn.classList.toggle("btn-inactive");
-  logBtn.classList.toggle("btn-active");
+  logBtn.classList.toggle("btn-inactive");
+  signBtn.classList.toggle("btn-active");
 }
 function handleButton(btn) {
   btn.addEventListener("click", handleClick);

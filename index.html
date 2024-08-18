@@ -27,13 +27,13 @@
       <div class="hero-container">
         <div class="form-container">
           <div class="hero-title-container">
-            <h1 class="hero-title">Sign Up</h1>
-            <p class="hero-paragraph">
+            <h1 class="hero-title transition">Sign Up</h1>
+            <p class="hero-paragraph transition">
               Join our community today! Create an account to unlock exclusive
               features and personalized experiences.
             </p>
           </div>
-          <form action="./home.html" id="registration">
+          <form id="registration" class="transition">
             <div class="user-container">
               <input
                 type="text"
@@ -66,7 +66,7 @@
                 required
               />
             </div>
-            <div class="buttons-container">
+            <div class="buttons-container transition">
               <input
                 id="heroBtnSub"
                 type="submit"
@@ -77,9 +77,29 @@
                 <button type="button" id="logInHero">Login</button>
               </a>
             </div>
+            <div class="form-media-container transition">
+              <div class="form-media-title">
+                <div class="line"></div>
+                <p class="media-paragraph">Or Continue with</p>
+                <div class="line"></div>
+              </div>
+              <div class="form-media-icons">
+                <img
+                  class="media-icon"
+                  src="./assets/google.png"
+                  alt="Google"
+                />
+                <img
+                  class="media-icon"
+                  src="./assets/facebook-form.png"
+                  alt="Facebook"
+                />
+                <img class="media-icon" src="./assets/apple.png" alt="Apple" />
+              </div>
+            </div>
           </form>
         </div>
-        <div id="login-container" class="hide">
+        <div id="login-container" class="hide transition">
           <div class="hero-title-container">
             <h1 class="hero-title">Login</h1>
             <p class="hero-paragraph">
@@ -87,7 +107,7 @@
               continue your journey with our community."
             </p>
           </div>
-          <form action="./home.html" id="login">
+          <form id="login" class="transition">
             <input
               type="text"
               placeholder="Username"
@@ -102,25 +122,31 @@
               class="login-input"
               required
             />
-            <input id="log-btn" type="submit" value="Login" />
-            <button id="log-signUp">Sign Up</button>
+            <div class="buttons-container transition">
+              <input id="log-btn" type="submit" value="Login" />
+              <button id="log-signUp">Sign Up</button>
+            </div>
+            <div class="form-media-container transition">
+              <div class="form-media-title">
+                <div class="line"></div>
+                <p class="media-paragraph">Or Continue with</p>
+                <div class="line"></div>
+              </div>
+              <div class="form-media-icons">
+                <img
+                  class="media-icon"
+                  src="./assets/google.png"
+                  alt="Google"
+                />
+                <img
+                  class="media-icon"
+                  src="./assets/facebook-form.png"
+                  alt="Facebook"
+                />
+                <img class="media-icon" src="./assets/apple.png" alt="Apple" />
+              </div>
+            </div>
           </form>
-        </div>
-        <div class="form-media-container">
-          <div class="form-media-title">
-            <div class="line"></div>
-            <p class="media-paragraph">Or Continue with</p>
-            <div class="line"></div>
-          </div>
-          <div class="form-media-icons">
-            <img class="media-icon" src="./assets/google.png" alt="Google" />
-            <img
-              class="media-icon"
-              src="./assets/facebook-form.png"
-              alt="Facebook"
-            />
-            <img class="media-icon" src="./assets/apple.png" alt="Apple" />
-          </div>
         </div>
       </div>
     </main>

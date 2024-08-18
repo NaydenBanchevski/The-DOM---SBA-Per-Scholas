@@ -38,6 +38,22 @@ body {
   background: #1a1a1a;
   width: 100%;
 }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.transition {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: calc(var(--i) * 1.5s);
+}
 
 .header {
   position: absolute;
@@ -106,19 +122,19 @@ body {
 }
 
 .log-btn {
-  background-color: transparent;
-  border: none;
-  color: var(--font-color);
-  cursor: pointer;
-}
-
-.sign-btn {
   background-color: var(--light-color);
   color: var(--font-dark-color);
   width: 85px;
   height: 40px;
   border: none;
   border-radius: 50px;
+  cursor: pointer;
+}
+
+.sign-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--font-color);
   cursor: pointer;
 }
 
@@ -163,6 +179,7 @@ body {
 }
 
 .hero-title-container {
+  --i: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -194,10 +211,9 @@ body {
   width: 100%;
 }
 #registration {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  --i: 0;
 }
+
 .user-container {
   display: flex;
   width: 100%;
@@ -232,6 +248,7 @@ body {
   padding: 25px;
   outline: var(--light-color);
   color: var(--light-color);
+  margin-top: 20px;
 }
 
 .buttons-container {
@@ -273,6 +290,7 @@ body {
   font-weight: 300;
   cursor: pointer;
   border: 1px solid var(--border-color);
+  margin-bottom: 20px;
 }
 
 .footer-container {
@@ -362,6 +380,13 @@ body {
   flex-direction: column;
 }
 
+.login-form-media-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  --i: 1;
+}
+
 .form-media-title {
   display: flex;
   color: var(--paragraph-color);
@@ -419,6 +444,7 @@ body {
 }
 
 #login {
+  --i: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -440,7 +466,7 @@ body {
 }
 
 #log-btn {
-  margin-top: 20px;
+  margin-top: -20px;
   background-color: var(--light-color);
   color: var(--font-dark-color);
   font-size: 18px;
