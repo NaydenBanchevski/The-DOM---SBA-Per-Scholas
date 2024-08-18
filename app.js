@@ -216,7 +216,49 @@ registration.addEventListener("submit", function (event) {
       password: password.value,
     });
     localStorage.setItem("users", JSON.stringify(users));
-    // add functionality to redirect users once registered
+    signBtn.classList.add("hide");
+    mainEl.innerHTML = `      <div class="main-logged-container">
+          <div class="logged-hero">
+            <div class="section-container">
+              <div class="logged-hero-title-container">
+                <h1 class="logged-hero-title transition">
+                  Hello ${username.value}! 
+                </h1>
+                <p class="logged-hero-paragraph transition">
+                  Discover the power of our secure and rewarding credit cards.
+                  Explore our range of credit cards and take control of your
+                  finances today.
+                </p>
+                <button class="explore-btn transition">Explore</button>
+                <div class="users transition">
+                  <img src="./assets/user1.png" alt="user" class="user" />
+                  <img src="./assets/user2.png" alt="user" class="user" />
+                  <img src="./assets/user3.png" alt="user" class="user" />
+                  <div class="user-text">
+                    <h3>10.2k+</h3>
+                    <p>Active users around the world</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-container transition">
+              <img
+                src="assets/card.png"
+                class="card"
+                alt="credit-card"
+                width="500"
+                height="500"
+              />
+            </div>
+          </div>
+          <div class="brands-logged slide">
+            <img src="/assets/brands.png" class="brands" alt="brands" />
+            <img src="/assets/brands.png" class="brands" alt="brands" />
+            <img src="/assets/brands.png" class="brands" alt="brands" />
+            <img src="/assets/brands.png" class="brands" alt="brands" />
+          </div>
+        </div>
+        `;
   }
 });
 
