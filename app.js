@@ -4,6 +4,8 @@ let logBtn = document.querySelector(".log-btn");
 let navUl = document.getElementById("nav-ul");
 let title = document.querySelector(".hero-title");
 let paragraph = document.querySelector(".hero-paragraph");
+let mainEl = document.getElementById("main-el");
+let mainContent = document.querySelector("main-container");
 
 // let registration = document.querySelector("#registration");
 let username = registration["username"];
@@ -29,8 +31,8 @@ function handleClick(e) {
 
   document.querySelector("#login-container").classList.toggle("hide");
   document.querySelector(".form-container").classList.toggle("hide");
-  logBtn.classList.toggle("btn-inactive");
-  signBtn.classList.toggle("btn-active");
+  signBtn.classList.toggle("btn-inactive");
+  logBtn.classList.toggle("btn-active");
 }
 function handleButton(btn) {
   btn.addEventListener("click", handleClick);
@@ -63,6 +65,9 @@ navUl.classList.add("menu");
 
 document.querySelectorAll(".nav-links").forEach((link) => {
   link.addEventListener("click", (e) => {
+    if (logStatus === true) {
+      return true;
+    }
     if (logStatus === false) {
       e.preventDefault();
       registration["username"].focus();
@@ -211,7 +216,6 @@ registration.addEventListener("submit", function (event) {
       email: email.value,
       password: password.value,
     });
-    logStatus = true;
     localStorage.setItem("users", JSON.stringify(users));
     // add functionality to redirect users once registered
   }
@@ -238,5 +242,47 @@ login.addEventListener("submit", (e) => {
   if (!logCheck()) {
     e.preventDefault();
   }
-  window.location.href = "https://google.com";
+  logStatus = true;
+  logBtn.textContent = "Log Out";
+  logBtn.addEventListener("click", () => {
+    window.location.href = "index.html";
+    logStatus = false;
+  });
+
+  signBtn.classList.add("hide");
+  mainEl.innerHTML = `<div class="main-logged-container">
+      <div class="logged-hero">
+        <div class="section-container">
+          <div class="logged-hero-title-container">
+            <h1 class="logged-hero-title transition">
+              Welcome ${userLogin.value}!
+            </h1>
+            <p class="logged-hero-paragraph transition">
+              Discover the power of our secure and rewarding credit cards.
+              Explore our range of credit cards and take control of your
+              finances today.
+            </p>
+            <button class="explore-btn transition">Explore</button>
+            <div class="users transition">
+              <img src="./assets/user1.png" alt="user" class="user" />
+              <img src="./assets/user2.png" alt="user" class="user" />
+              <img src="./assets/user3.png" alt="user" class="user" />
+              <div class="user-text">
+                <h3>10.2k+</h3>
+                <p>Active users around the world</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-container transition">
+          <img src="assets/card.png" alt="credit-card" width="600" />
+        </div>
+      </div>
+      <div class="brands-logged">
+        <img src="/assets/brands.png" alt="brands" class="brands slide" />
+        <img src="/assets/brands.png" alt="brands" class="brands slide" />
+      </div>
+    </div>`;
 });
+
+// perScholas2024!

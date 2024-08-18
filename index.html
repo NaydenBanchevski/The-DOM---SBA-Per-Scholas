@@ -22,131 +22,140 @@
         </div>
       </nav>
     </header>
-
-    <main class="main-container">
-      <div class="hero-container">
-        <div class="form-container">
-          <div class="hero-title-container">
-            <h1 class="hero-title transition">Sign Up</h1>
-            <p class="hero-paragraph transition">
-              Join our community today! Create an account to unlock exclusive
-              features and personalized experiences.
-            </p>
+    <main id="main-el">
+      <div class="main-container">
+        <div class="hero-container">
+          <div class="form-container">
+            <div class="hero-title-container">
+              <h1 class="hero-title transition">Sign Up</h1>
+              <p class="hero-paragraph transition">
+                Join our community today! Create an account to unlock exclusive
+                features and personalized experiences.
+              </p>
+            </div>
+            <form id="registration" class="transition">
+              <div class="user-container">
+                <input
+                  type="text"
+                  id="userName"
+                  name="username"
+                  placeholder="Enter Username"
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your Email"
+                  required
+                />
+              </div>
+              <div class="pass-container">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your Password"
+                  required
+                />
+                <input
+                  type="password"
+                  id="regCheck"
+                  name="passwordCheck"
+                  placeholder="Confirm your Password"
+                  required
+                />
+              </div>
+              <div class="buttons-container transition">
+                <input
+                  id="heroBtnSub"
+                  type="submit"
+                  value="Sign Up"
+                  class="submit-btn"
+                />
+                <a href="/">
+                  <button type="button" id="logInHero">Login</button>
+                </a>
+              </div>
+              <div class="form-media-container transition">
+                <div class="form-media-title">
+                  <div class="line"></div>
+                  <p class="media-paragraph">Or Continue with</p>
+                  <div class="line"></div>
+                </div>
+                <div class="form-media-icons">
+                  <img
+                    class="media-icon"
+                    src="./assets/google.png"
+                    alt="Google"
+                  />
+                  <img
+                    class="media-icon"
+                    src="./assets/facebook-form.png"
+                    alt="Facebook"
+                  />
+                  <img
+                    class="media-icon"
+                    src="./assets/apple.png"
+                    alt="Apple"
+                  />
+                </div>
+              </div>
+            </form>
           </div>
-          <form id="registration" class="transition">
-            <div class="user-container">
+          <div id="login-container" class="hide transition">
+            <div class="hero-title-container">
+              <h1 class="hero-title">Login</h1>
+              <p class="hero-paragraph">
+                "Welcome back! Log in to access your personalized features and
+                continue your journey with our community."
+              </p>
+            </div>
+            <form id="login" class="transition">
               <input
                 type="text"
-                id="userName"
+                placeholder="Username"
                 name="username"
-                placeholder="Enter Username"
+                class="login-input"
                 required
               />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your Email"
-                required
-              />
-            </div>
-            <div class="pass-container">
               <input
                 type="password"
-                id="password"
+                placeholder="Password"
                 name="password"
-                placeholder="Enter your Password"
+                class="login-input"
                 required
               />
-              <input
-                type="password"
-                id="regCheck"
-                name="passwordCheck"
-                placeholder="Confirm your Password"
-                required
-              />
-            </div>
-            <div class="buttons-container transition">
-              <input
-                id="heroBtnSub"
-                type="submit"
-                value="Sign Up"
-                class="submit-btn"
-              />
-              <a href="/">
-                <button type="button" id="logInHero">Login</button>
-              </a>
-            </div>
-            <div class="form-media-container transition">
-              <div class="form-media-title">
-                <div class="line"></div>
-                <p class="media-paragraph">Or Continue with</p>
-                <div class="line"></div>
+              <div class="buttons-container transition">
+                <input id="log-btn" type="submit" value="Login" />
+                <button id="log-signUp">Sign Up</button>
               </div>
-              <div class="form-media-icons">
-                <img
-                  class="media-icon"
-                  src="./assets/google.png"
-                  alt="Google"
-                />
-                <img
-                  class="media-icon"
-                  src="./assets/facebook-form.png"
-                  alt="Facebook"
-                />
-                <img class="media-icon" src="./assets/apple.png" alt="Apple" />
+              <div class="form-media-container transition">
+                <div class="form-media-title">
+                  <div class="line"></div>
+                  <p class="media-paragraph">Or Continue with</p>
+                  <div class="line"></div>
+                </div>
+                <div class="form-media-icons">
+                  <img
+                    class="media-icon"
+                    src="./assets/google.png"
+                    alt="Google"
+                  />
+                  <img
+                    class="media-icon"
+                    src="./assets/facebook-form.png"
+                    alt="Facebook"
+                  />
+                  <img
+                    class="media-icon"
+                    src="./assets/apple.png"
+                    alt="Apple"
+                  />
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
-        <div id="login-container" class="hide transition">
-          <div class="hero-title-container">
-            <h1 class="hero-title">Login</h1>
-            <p class="hero-paragraph">
-              "Welcome back! Log in to access your personalized features and
-              continue your journey with our community."
-            </p>
+            </form>
           </div>
-          <form id="login" class="transition">
-            <input
-              type="text"
-              placeholder="Username"
-              name="username"
-              class="login-input"
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              class="login-input"
-              required
-            />
-            <div class="buttons-container transition">
-              <input id="log-btn" type="submit" value="Login" />
-              <button id="log-signUp">Sign Up</button>
-            </div>
-            <div class="form-media-container transition">
-              <div class="form-media-title">
-                <div class="line"></div>
-                <p class="media-paragraph">Or Continue with</p>
-                <div class="line"></div>
-              </div>
-              <div class="form-media-icons">
-                <img
-                  class="media-icon"
-                  src="./assets/google.png"
-                  alt="Google"
-                />
-                <img
-                  class="media-icon"
-                  src="./assets/facebook-form.png"
-                  alt="Facebook"
-                />
-                <img class="media-icon" src="./assets/apple.png" alt="Apple" />
-              </div>
-            </div>
-          </form>
         </div>
       </div>
     </main>
@@ -174,12 +183,8 @@
           <p class="footer-paragraph">
             &copy; 2024 YourBanK. All rights reserved. Developer :
             <a href="https://github.com/NaydenBanchevski " target="_blank">
-              Nayden Banchevski
-            </a>
-            | Designer:
-            <a href="https://www.figma.com/@praha" target="_blank">
-              Praha Produce UI
-            </a>
+              Nayden Banchevski</a
+            >
           </p>
         </div>
       </div>
