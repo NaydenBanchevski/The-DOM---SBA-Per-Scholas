@@ -216,6 +216,13 @@ registration.addEventListener("submit", function (event) {
       password: password.value,
     });
     localStorage.setItem("users", JSON.stringify(users));
+    logStatus = true;
+    logBtn.textContent = "Log Out";
+    logBtn.addEventListener("click", () => {
+      window.location.href = "index.html";
+      logStatus = false;
+    });
+
     signBtn.classList.add("hide");
     mainEl.innerHTML = `      <div class="main-logged-container">
           <div class="logged-hero">

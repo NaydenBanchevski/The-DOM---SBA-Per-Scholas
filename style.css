@@ -56,6 +56,7 @@ body {
   border-radius: 50px;
   background-color: #1c1c1c;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -100,6 +101,11 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 150px;
+  position: relative;
+}
+
+#hamburger {
+  display: none;
 }
 
 .log-btn {
@@ -157,6 +163,8 @@ main {
   max-width: 1350px;
   margin-bottom: 30px;
   padding-bottom: 50px;
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
 }
 
 .hero-container {
@@ -486,7 +494,7 @@ main {
 }
 
 .main-logged-container {
-  margin-top: 175px;
+  margin-top: 125px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -496,6 +504,8 @@ main {
   width: 100%;
   max-width: 1350px;
   padding-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
 }
 .logged-hero {
   display: flex;
@@ -646,19 +656,22 @@ main {
   }
   .header {
     width: 100%;
+    min-width: 358px;
+    justify-content: center;
     margin: 0;
     padding: 0;
   }
   .nav {
     width: 100%;
+    min-width: 358px;
     align-items: center;
   }
   .nav-buttons {
-    justify-content: end;
+    justify-content: flex-end;
     gap: 20px;
   }
   .hero-title {
-    font-size: 36px;
+    font-size: 28px;
   }
   .hero-paragraph {
     max-width: 75%;
@@ -666,7 +679,12 @@ main {
     text-align: justify;
   }
   .main-container {
-    max-width: 95%;
+    margin-top: 125px;
+    min-width: 358px;
+    width: 95%;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    margin-bottom: 0;
   }
   .user-container {
     align-items: center;
@@ -674,27 +692,40 @@ main {
     gap: 20px;
   }
   .user-container input {
-    max-width: 75%;
+    height: 58px;
+    width: 70%;
+    width: 358px;
   }
   .pass-container {
     align-items: center;
     flex-direction: column;
   }
   .pass-container input {
-    max-width: 75%;
+    height: 58px;
+    width: 70%;
+    width: 358px;
   }
   .form-media-title {
-    width: 90%;
+    width: 80%;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .line {
+    width: 65%;
+  }
+  .media-icon {
+    height: 55px;
+    width: 55px;
   }
 
   #heroBtnSub {
-    max-width: 75%;
+    max-width: 70%;
+    height: 58px;
   }
   #logInHero {
-    max-width: 75%;
-  }
-  .pass-container a {
-    width: fit-content;
+    max-width: 70%;
+    height: 58px;
   }
   .footer-paragraph {
     display: none;
@@ -705,47 +736,52 @@ main {
     margin-right: 10px;
   }
   .login-input {
-    width: 90%;
+    height: 58px;
+    width: 358px;
   }
   #log-btn {
     margin-top: -20px;
-    width: 380px;
-    height: 65px;
+    height: 58px;
+    width: 358px;
   }
 
   #log-signUp {
-    width: 380px;
-    height: 65px;
+    height: 58px;
+    width: 358px;
   }
   .main-logged-container {
-    display: flex;
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
+    justify-content: center;
+    align-items: center;
+    min-width: 359px;
+    width: 95%;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    margin-top: 125px;
   }
   .logged-hero {
     display: flex;
+    justify-content: center;
+    align-self: center;
     flex-direction: column-reverse;
     align-items: center;
-    width: 95%;
-    padding-left: 20px;
   }
-  .section-container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+
   .card-container {
-    margin-top: 100px;
+    --i: 0;
+    justify-content: center;
+    margin-top: 50px;
     align-items: center;
     width: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
   }
   .card {
     width: 350px;
     height: 350px;
   }
   .logged-hero-title-container {
+    --i: 1;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -759,10 +795,14 @@ main {
     font-size: 16px;
     width: 100%;
   }
+  .brands-logged {
+    margin-top: 0;
+  }
   .explore-btn {
     width: 350px;
   }
   .users {
+    --i: 2;
     align-items: center;
   }
 }
